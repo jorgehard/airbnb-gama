@@ -7,12 +7,21 @@ async function buscarApi(val1) {
 
 //Mostrando API
 function mostrarDados(data) {
+    const total_result = Object.keys(data).length;
     data.map(elemento => {
         const root = document.getElementById("root");
         const { photo, name, property_type, price } = elemento;
+        // div = document.createElement("div");
 
-        div = document.createElement("div");
+        // image = document.createElement("img");
+        // image.setAttribute("src", photo);
 
+        // pro = document.createElement("p");
+        // pro.innerHTML = property_type;
+        // price.innerHTML = `R$ ${price},00 `;
+
+        // root.appendChild(div);
+        // div.appendChild(image);
     });
 }
 
