@@ -1,0 +1,58 @@
+
+@import url("https://fonts.googleapis.com/css?family=Karla|Rubik:400,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+/* Padroes para facilitar desenvolvimento */
+.container-flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.js-around{
+  justify-content: space-around;
+}
+.js-center{
+  justify-content: center;
+}
+.container-flex .col-6{
+  flex: 0 0 auto;
+  width: 50%;
+  padding:10px 20px;
+}
+.container-flex .col-4{
+  flex: 0 0 auto;
+  width: 33.333333%;
+  padding:10px 20px;
+
+}
+/* -------------------- */
+/* fim do padroes flex */
+/* -------------------- */
+.col-4{
+    border:1px solid red;
+}
+.navBar{
+    display:flex; 
+    justify-content: space-between;
+}
+
+.navBar > div{
+   border:1px solid red;
+}
+
+.formNav{
+    display:flex; 
+}
+.formNav > div{
+    display:flex;
+    flex-direction: column;
+}
