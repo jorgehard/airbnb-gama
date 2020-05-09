@@ -10,12 +10,14 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-family: 'Rubik', sans-serif;
 }
 /* Padroes para facilitar desenvolvimento */
 .container-flex{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding:10px;
 }
 .js-around{
   justify-content: space-around;
@@ -38,21 +40,126 @@ html, body {
 /* fim do padroes flex */
 /* -------------------- */
 .col-4{
-    border:1px solid red;
+    border-bottom:1px solid #f3f3f3;
 }
 .navBar{
     display:flex; 
     justify-content: space-between;
+    padding:10px;
+    -webkit-box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75);
+    background:#464A4D;
+    color:#fff;
 }
-
+.navBar svg{
+    color: #F3f3f3;
+}
 .navBar > div{
-   border:1px solid red;
+   padding:0px 20px;
 }
-
+.navBar .logo{
+    display:flex; 
+    align-items: center;
+    height:auto;
+}
 .formNav{
     display:flex; 
 }
 .formNav > div{
     display:flex;
     flex-direction: column;
+}
+.formNav label{
+    font-size:13px;
+    margin-bottom:5px;
+    font-family: 'Karla', sans-serif;
+}
+.formNav input, button{
+    height:35px;
+    margin-right:10px;
+    border: none;
+}
+.formNav input{
+    padding:10px;
+    background:#F2EFE4;
+    font-family:'Arial', sans-serif;
+}
+.formNav button{
+    background: rgba(255,56,92,1);
+    width:100px;
+    color:#f3f3f3;
+    font-weight:bold;
+    font-family: 'Karla', sans-serif;
+    background: -moz-linear-gradient(left, rgba(255,56,92,1) 0%, rgba(161,20,46,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,56,92,1)), color-stop(100%, rgba(161,20,46,1)));
+    background: -webkit-linear-gradient(left, rgba(255,56,92,1) 0%, rgba(161,20,46,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,56,92,1) 0%, rgba(161,20,46,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,56,92,1) 0%, rgba(161,20,46,1) 100%);
+    background: linear-gradient(to right, rgba(255,56,92,1) 0%, rgba(161,20,46,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff385c', endColorstr='#a1142e', GradientType=1 );
+    cursor:pointer;
+}
+.formNav button svg{
+    margin-right:5px;
+}
+/* ------------ PageContainer ---------- */
+.pageContainer{
+    padding:40px 20px;
+}
+.pageContainer .topContainer{
+    padding:10px;
+    color:#464A4D;
+    letter-spacing: 0.5px;
+}
+.pageContainer .topContainer .top1{
+    font-size:13px;
+    padding:5px 0;
+}
+.pageContainer .topContainer .top2{
+    font-size:27px;
+    padding:5px 0;
+    font-weight: bold;
+}
+.pageContainer .topContainer .top3{
+    font-size:15px;
+    padding:10px 0;
+    width:70%;
+}
+/* ------------ BoxImg ---------------- */
+.boxImg{
+    display:flex;
+    flex-direction: column;
+    color:#464A4D;
+}
+.boxImg img{
+    width:100%;
+    /* Corrigir height dinamico */
+    min-height:250px;
+    max-height:250px;
+    /* -- */
+    border-radius:5px;
+}
+.boxImg .boxTitle{
+    padding-top:10px;
+}
+.boxTitle .propertyType{
+    font-size:16px;
+    font-weight: bold;
+}
+.boxTitle .nameType{
+    font-size:13px;
+    padding:3px 0;
+}
+.boxTitle .price{
+    font-size:12px;
+}
+/* ----------- footer ---------------- */
+footer{
+    background:#464A4D;
+    color:#f3f3f3;
+    padding:20px 0px;
+}
+footer > div{
+    padding:10px 20px;
 }
