@@ -1,5 +1,16 @@
-const api_url = "https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
+// const api_url = "https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
 
+
+import { apiTest } from "js/apitest.js"
+apiTest.map(item => console.log(item + 1))
+
+// // 
+// 
+// // 
+// 
+// // 
+
+//Buscar API
 async function buscarApi(val1) {
     const data = await fetch(val1);
     return data.json();
