@@ -2,6 +2,11 @@
 // const api_url = "api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
 const api_url = "https://cors-anywhere.herokuapp.com/http://fenix.atlasware.com.br/apitest.json";
 
+const records_per_page = 6;
+window.page = 1;
+
+let button = document.getElementById('showMore');
+button.addEventListener("click", function () { carregarMais(page) }, true);
 
 //Buscar API
 async function buscarApi(val1) {
@@ -9,13 +14,14 @@ async function buscarApi(val1) {
     return data.json();
 }
 
-//Mostrando API
+//Mostrar Dados iniciais
 function mostrarDados(data) {
     const total_result = Object.keys(data).length;
     document.getElementById("totalJs").innerHTML = total_result;
-    data.map(elemento => {
+
+    console.log(page);
+    for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
         const root = document.getElementById("apiBox");
-        const { photo, name, property_type, price } = elemento;
 
         let div = document.createElement("div");
         div.setAttribute("class", "col-4");
@@ -25,22 +31,22 @@ function mostrarDados(data) {
         boxImg.setAttribute("class", "boxImg");
 
         let image = document.createElement("img");
-        image.setAttribute("src", photo);
+        image.setAttribute("src", data[i].photo);
 
         let boxTitle = document.createElement("div");
         boxTitle.setAttribute("class", "boxTitle");
 
         let propertyType = document.createElement("p");
         propertyType.setAttribute("class", "propertyType");
-        propertyType.innerHTML = property_type;
+        propertyType.innerHTML = data[i].property_type;
 
         let nameType = document.createElement("p");
         nameType.setAttribute("class", "nameType");
-        nameType.innerHTML = name;
+        nameType.innerHTML = data[i].name;
 
         let priceType = document.createElement("p");
         priceType.setAttribute("class", "price");
-        priceType.innerHTML = `<b>R$ ${price},00</b> / diária`;
+        priceType.innerHTML = `<b>R$ ${data[i].price},00</b> / diária`;
 
         root.appendChild(div);
         div.appendChild(boxImg);
@@ -49,13 +55,28 @@ function mostrarDados(data) {
         boxTitle.appendChild(propertyType);
         boxTitle.appendChild(nameType);
         boxTitle.appendChild(priceType);
-    });
+
+    }
+    if (numPages(total_result) <= page) {
+        let button = document.getElementById('showMore');
+        button.setAttribute("style", "display:none")
+    }
 }
+
+function carregarMais(pagex) {
+    page = pagex + 1;
+    buscarApi(api_url)
+        .then(mostrarDados);
+}
+
+function numPages(total_result) {
+    return Math.ceil(total_result / records_per_page);
+}
+
 function pageDados(data) {
     console.log("ok");
 }
 
 // Chamando API Inicial
 buscarApi(api_url)
-    .then((mostrarDados))
-
+    .then(mostrarDados);
