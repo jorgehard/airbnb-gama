@@ -1,11 +1,8 @@
 
-const api_url = "https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
+// const api_url = "api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
+const api_url = "https://cors-anywhere.herokuapp.com/http://fenix.atlasware.com.br/apitest.json";
 
-// //
-//
-// //
-//
-// //
+
 //Buscar API
 async function buscarApi(val1) {
     const data = await fetch(val1);
