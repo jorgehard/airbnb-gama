@@ -49,24 +49,27 @@
         </nav>
     </header>
     <section class="pageContainer" id="pageGlobal">
-        <div class="topContainer">
-            <p class="top1">
-                Mais de <span id="totalJs">0</span> acomodações
-            </p>
-            <p class="top2" id="tituloTop">
-                Escolha as melhores acomodações baseado a suas necessidades.
-            </p>
-            <p class="top3" id="removeTop3">
-                Verifique as restrições de viagem antes de fazer uma reserva.A saúde e a segurança das nossas
-                comunidades vêm sempre em
-                primeiro lugar. Siga as orientações do governo e viaje apenas se for essencial.
-            </p>
-        </div>
-        <div class="container-flex js-around" id="apiBox"> </div>
-        <div class="pagination" id="pagination">
-            <div class="container-flex js-center">
-                <button id="showMore">Carregar mais + </button>
+        <div class="container-flex">
+            <div class="col-8">
+                <div class="topContainer">
+                    <p class="top1">
+                        Mais de <span id="totalJs">0</span> acomodações
+                    </p>
+                    <p class="top2" id="tituloTop">
+                        Acomodações em <span id="locationTop"></span>
+                    </p>
+                </div>
+                <div class="container-flex js-around" id="apiBox"> </div>
+                <div class="pagination" id="pagination">
+                    <div class="container-flex js-center">
+                        <button id="showMore">Carregar mais + </button>
+                    </div>
+                </div>
             </div>
+            <div class="col-4 mapDiv">
+                <div id="map"></div>
+            </div>
+
         </div>
     </section>
     <footer>
@@ -74,7 +77,18 @@
             © 2020 Airbnb - Projeto realizado apenas por fins educativos
         </div>
     </footer>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+        }
+    </script>
+    <script type="text/javascript" src="js/buscar.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?components=locality:sao+paulo|country:BR&key=AIzaSyDTqAXpLbSgystIns-YBrVA0ZTLDm1qu4I&callback=initMap"></script>
 </body>
 
 </html>

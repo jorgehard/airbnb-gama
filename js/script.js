@@ -1,6 +1,6 @@
 
 // const api_url = "api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72";
-const api_url = "https://cors-anywhere.herokuapp.com/http://fenix.atlasware.com.br/apitest.json";
+const api_url = "https://cors-anywhere.herokuapp.com/http://fenix.atlasware.com.br/api_v2.json";
 
 const records_per_page = 6;
 window.page = 1;
@@ -25,7 +25,7 @@ function mostrarDados(data) {
 
         let div = document.createElement("div");
         div.setAttribute("class", "col-4");
-        div.addEventListener("click", pageDados);
+        // div.addEventListener("click", pageDados);
 
         let boxImg = document.createElement("div");
         boxImg.setAttribute("class", "boxImg");
@@ -73,10 +73,25 @@ function numPages(total_result) {
     return Math.ceil(total_result / records_per_page);
 }
 
-function pageDados(data) {
-    console.log("ok");
-}
-
 // Chamando API Inicial
 buscarApi(api_url)
     .then(mostrarDados);
+
+//Melhor forma seria usando JQuery / Ajax porém o objetivo era usar JS vanilla entao utilizei dessa forma
+
+var form = document.getElementById("myForm");
+form.addEventListener('submit', handleForm);
+
+function handleForm(event) {
+    event.preventDefault();
+
+    var idCheckin = JSON.stringify(document.getElementById('idCheckin').value);
+    var idCheckout = JSON.stringify(document.getElementById('idCheckout').value);
+    var location = JSON.stringify(document.getElementById('idLocalizacao').value);
+
+    sessionStorage.setItem('idCheckin', idCheckin);
+    sessionStorage.setItem('idCheckout', idCheckout);
+    sessionStorage.setItem('location', location);
+
+    window.location.href = 'buscar.html';
+}
