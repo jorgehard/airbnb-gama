@@ -15,6 +15,7 @@ async function buscarApi(val1) {
 }
 
 //Mostrar Dados iniciais
+
 function mostrarDados(data) {
     const total_result = Object.keys(data).length;
     document.getElementById("totalJs").innerHTML = total_result;
@@ -91,11 +92,11 @@ function handleForm(event) {
 
     var idCheckin = JSON.stringify(document.getElementById('idCheckin').value);
     var idCheckout = JSON.stringify(document.getElementById('idCheckout').value);
-    var location = JSON.stringify(document.getElementById('idLocalizacao').value);
+    var locationEnd = JSON.stringify(document.getElementById('idLocalizacao').value);
 
     sessionStorage.setItem('idCheckin', idCheckin);
     sessionStorage.setItem('idCheckout', idCheckout);
-    sessionStorage.setItem('location', location);
+    sessionStorage.setItem('locationEnd', locationEnd);
 
     window.location.href = 'buscar.html';
 }

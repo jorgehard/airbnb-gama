@@ -24,8 +24,6 @@ html, body {
 }
 .mapDiv{
     padding:0px !important;
-    position:relative;
-    top:0px;
     width:100%;    
     border:1px solid;
     position:fixed;
@@ -228,4 +226,104 @@ footer{
 }
 footer > div{
     padding:10px 20px;
+}
+
+@media screen and (max-width: 1045px) {
+
+    .mobileBox img{
+        height:150px !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    
+    .mapDiv{
+        position:relative;
+        top:0;
+        width:100%;
+        height:300px;
+    }
+    .mobileDiv{
+        flex-direction: column;
+    }
+    .mobileDiv > .col-4{
+        width:100% !important;
+    }
+    .mobileDiv .col-8{
+        width:100%;
+    }
+    .navBar{
+        flex-direction: column;
+    }
+    .navBar > div{
+        padding:10px;
+        margin:0 auto;
+    }
+    .mobileBox img{
+        height:150px !important;
+    }
+    .boxImg img{
+        height:150px;
+    }
+    #pageGlobal{
+        margin-top:120px;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    .navBar{
+        position:relative;
+    }
+    .mobileBox img{
+        height:150px !important;
+    }
+    #pageGlobal{
+        margin-top:5px;
+    }
+    .formNav{
+        flex-direction: column;
+        width:100%;
+    }
+    .navBar .logo{
+        margin:0 auto;
+    }
+    .navBar > div{
+        margin:0px;
+    }
+   .formNav label{
+       margin:10px;
+   }
+    .formNav label, input{
+        width:100%;
+    }
+    .formNav button{
+        width:100%;
+    }
+    #tags-keywords{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #tags-keywords span{
+        margin:10px;
+    }
+}
+
+@media screen and (max-width: 585px) {
+    .col-4{
+        width:50% !important;
+    }
+}
+@media screen and (max-width: 441px){
+    .col-4{
+        width:100% !important;
+    }
+    .boxImg img{
+        height:210px;
+    }
+}
+
+@media screen and (max-width: 270px){
+    .boxImg img{
+        height:150px;
+    }
 }

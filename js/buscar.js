@@ -13,26 +13,25 @@ async function buscarApi(val1) {
     const data = await fetch(val1);
     return data.json();
 }
-
 //Mostrar Dados iniciais
 function mostrarDados(data) {
-    var location = JSON.parse(sessionStorage.getItem('location'));
-    document.getElementById("idLocalizacao").value = location;
+    var locationEnd = JSON.parse(sessionStorage.getItem('locationEnd'));
+    document.getElementById("idLocalizacao").value = locationEnd;
+
     var idCheckin = JSON.parse(sessionStorage.getItem('idCheckin'));
     document.getElementById("idCheckin").value = idCheckin;
-    document.getElementById("idCheckin").value = idCheckin;
+
     var idCheckout = JSON.parse(sessionStorage.getItem('idCheckout'));
     document.getElementById("idCheckout").value = idCheckout;
 
-
     document.getElementById("dateBox").classList.add("invisible");
     //Calculando data de hospedagem
-    if (location !== '') {
-        document.getElementById("locationTop").innerHTML = location;
+    if (locationEnd !== '') {
+        document.getElementById("locationTop").innerHTML = locationEnd;
         let dias_calculo = 1;
 
         data = data.filter((locationx) => {
-            return locationx.keyword === location;
+            return locationx.keyword === locationEnd;
         });
 
         const total_result = Object.keys(data).length;
@@ -112,8 +111,8 @@ function mostrarDados(data) {
         }
     } else {
 
-        location = 'Nada encontrado';
-        document.getElementById("locationTop").innerHTML = location;
+        locationEnd = 'Nada encontrado';
+        document.getElementById("locationTop").innerHTML = locationEnd;
     }
 }
 
@@ -131,7 +130,26 @@ function numPages(total_result) {
 buscarApi(api_url)
     .then(mostrarDados);
 
+
+//Mostrar locations
+function mostrarLocation(data) {
+    var locationEnd = JSON.parse(sessionStorage.getItem('locationEnd'));
+    if (locationEnd !== '') {
+        document.getElementById("locationTop").innerHTML = locationEnd;
+        let dias_calculo = 1;
+        var location_complete = '';
+        data = data.filter((locationx) => {
+            return locationx.keyword === locationEnd;
+        });
+        data.forEach((response) => {
+            location_complete += '{ name: "' + response.location + '", iconEtapa: "1" },';
+        });
+    }
+    return console.log(location_complete);
+}
+
 //Melhor forma seria usando JQuery / Ajax porém o objetivo era usar JS vanilla entao utilizei dessa forma
+
 function pageDados(varx) {
     alert('Fazer pagina para receber os itens');
 }
@@ -140,11 +158,11 @@ function handleForm(event) {
 
     var idCheckin = JSON.stringify(document.getElementById('idCheckin').value);
     var idCheckout = JSON.stringify(document.getElementById('idCheckout').value);
-    var location = JSON.stringify(document.getElementById('idLocalizacao').value);
+    var locationEnd = JSON.stringify(document.getElementById('idLocalizacao').value);
 
     sessionStorage.setItem('idCheckin', idCheckin);
     sessionStorage.setItem('idCheckout', idCheckout);
-    sessionStorage.setItem('location', location);
+    sessionStorage.setItem('locationEnd', locationEnd);
 
     window.location.href = 'buscar.html';
 }
@@ -165,3 +183,4 @@ function formatDataBr(varDate) {
         ano = data.getFullYear();
     return dia + "/" + mes + "/" + ano;
 }
+
