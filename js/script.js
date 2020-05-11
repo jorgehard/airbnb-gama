@@ -21,40 +21,44 @@ function mostrarDados(data) {
 
     console.log(page);
     for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
-        const root = document.getElementById("apiBox");
+        try {
+            const root = document.getElementById("apiBox");
 
-        let div = document.createElement("div");
-        div.setAttribute("class", "col-4");
-        // div.addEventListener("click", pageDados);
+            let div = document.createElement("div");
+            div.setAttribute("class", "col-4");
+            // div.addEventListener("click", pageDados);
 
-        let boxImg = document.createElement("div");
-        boxImg.setAttribute("class", "boxImg");
+            let boxImg = document.createElement("div");
+            boxImg.setAttribute("class", "boxImg");
 
-        let image = document.createElement("img");
-        image.setAttribute("src", data[i].photo);
+            let image = document.createElement("img");
+            image.setAttribute("src", data[i].photo);
 
-        let boxTitle = document.createElement("div");
-        boxTitle.setAttribute("class", "boxTitle");
+            let boxTitle = document.createElement("div");
+            boxTitle.setAttribute("class", "boxTitle");
 
-        let propertyType = document.createElement("p");
-        propertyType.setAttribute("class", "propertyType");
-        propertyType.innerHTML = data[i].property_type;
+            let propertyType = document.createElement("p");
+            propertyType.setAttribute("class", "propertyType");
+            propertyType.innerHTML = data[i].property_type;
 
-        let nameType = document.createElement("p");
-        nameType.setAttribute("class", "nameType");
-        nameType.innerHTML = data[i].name;
+            let nameType = document.createElement("p");
+            nameType.setAttribute("class", "nameType");
+            nameType.innerHTML = data[i].name;
 
-        let priceType = document.createElement("p");
-        priceType.setAttribute("class", "price");
-        priceType.innerHTML = `<b>R$ ${data[i].price},00</b> / diária`;
+            let priceType = document.createElement("p");
+            priceType.setAttribute("class", "price");
+            priceType.innerHTML = `<b>R$ ${data[i].price},00</b> / diária`;
 
-        root.appendChild(div);
-        div.appendChild(boxImg);
-        boxImg.appendChild(image);
-        boxImg.appendChild(boxTitle);
-        boxTitle.appendChild(propertyType);
-        boxTitle.appendChild(nameType);
-        boxTitle.appendChild(priceType);
+            root.appendChild(div);
+            div.appendChild(boxImg);
+            boxImg.appendChild(image);
+            boxImg.appendChild(boxTitle);
+            boxTitle.appendChild(propertyType);
+            boxTitle.appendChild(nameType);
+            boxTitle.appendChild(priceType);
+        } catch (e) {
+            continue;
+        }
 
     }
     if (numPages(total_result) <= page) {
