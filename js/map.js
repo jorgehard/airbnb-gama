@@ -1,4 +1,25 @@
+buscarApi(api_url)
+    .then(function (response) {
+        if (locationEnd !== '') {
 
+
+            response = response.filter((locationx) => {
+                return locationx.keyword === locationEnd;
+            });
+
+            locations = response.map(function (elem) {
+                return {
+                    name: elem.location,
+                    iconEtapa: "1",
+                }
+            });
+            theNext();
+
+        }
+    });
+
+
+var locationEnd = JSON.parse(sessionStorage.getItem('locationEnd'));
 var delay = 10;
 var infowindow = new google.maps.InfoWindow();
 var latlng = new google.maps.LatLng(-23.962077, -46.397010);
@@ -10,6 +31,32 @@ var mapOptions = {
 var geocoder = new google.maps.Geocoder();
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 var bounds = new google.maps.LatLngBounds();
+
+var nextAddress = 0;
+
+function theNext() {
+    if (nextAddress < locations.length) {
+        setTimeout('geocodeAddress("' + nextAddress + '",theNext)', delay);
+        nextAddress++;
+    } else {
+        map.fitBounds(bounds);
+    }
+}
+function createMarker(add, lat, lng) {
+    var image = {
+        url: "./assets/marker.png",
+        scaledSize: new google.maps.Size(39, 39)
+    };
+    var icons = {
+        '1': { icon: image },
+    };
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, lng),
+        map: map,
+        icon: icons[add.iconEtapa].icon
+    });
+    bounds.extend(marker.position);
+}
 
 function geocodeAddress(address, next) {
     var address = locations[address];
@@ -31,61 +78,3 @@ function geocodeAddress(address, next) {
         next();
     });
 }
-function createMarker(add, lat, lng) {
-    var image = {
-        url: "./assets/marker.png",
-        scaledSize: new google.maps.Size(39, 39)
-    };
-    var icons = {
-        '1': { icon: image },
-    };
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(lat, lng),
-        map: map,
-        icon: icons[add.iconEtapa].icon
-    });
-
-    // google.maps.event.addListener(marker, 'click', function () {
-    //     infowindow.setContent(contentString);
-    //     infowindow.setOptions('maxWidth', 350);
-    //     infowindow.open(map, marker);
-    // });
-
-    // google.maps.event.addDomListener(li, "click", function () {
-    //     google.maps.event.trigger(marker, "click");
-    // });
-    bounds.extend(marker.position);
-}
-
-buscarApi(api_url)
-    .then(mostrarLocation);
-
-console.log(locations_teste);
-
-var locations = [
-    {
-        name: 'Av. Ana Costa, 473 - Gonzaga, Santos - SP',
-        iconEtapa: '1'
-    },
-    {
-        name: 'Rua Alexandre Herculano, 23, Santos - SP',
-        iconEtapa: '1'
-    }
-];
-
-
-
-
-
-
-
-var nextAddress = 0;
-function theNext() {
-    if (nextAddress < locations.length) {
-        setTimeout('geocodeAddress("' + nextAddress + '",theNext)', delay);
-        nextAddress++;
-    } else {
-        map.fitBounds(bounds);
-    }
-}
-theNext();
