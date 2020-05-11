@@ -24,7 +24,7 @@
                 <form method="get" id="myForm" class="formNav">
                     <div style="flex-direction: column;">
                         <label for="idLocalizacao">Localização:</label>
-                        <input type="text" name="localizacao" id="idLocalizacao" />
+                        <input type="text" name="localizacao" placeholder="Digite a palavra-chave" id="idLocalizacao" />
                     </div>
                     <div>
                         <label for="idCheckin">Check-in:</label>
@@ -61,6 +61,12 @@
                 comunidades vêm sempre em
                 primeiro lugar. Siga as orientações do governo e viaje apenas se for essencial.
             </p>
+            <div id="tags-keywords">Palavras-Chaves:
+                <span class="badget">São Paulo</span>
+                <span class="badget">Santos</span>
+                <span class="badget">Itanhaém</span>
+                <span class="badget">New York</span>
+            </div>
         </div>
         <div class="container-flex js-around" id="apiBox"> </div>
         <div class="pagination" id="pagination">
@@ -74,7 +80,7 @@
             © 2020 Airbnb - Projeto realizado apenas por fins educativos
         </div>
     </footer>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/script.js?v1.6"></script>
 </body>
 
 </html>

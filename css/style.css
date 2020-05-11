@@ -210,6 +210,16 @@ html, body {
 .invisible{
     display:none;
 }
+/* badge */
+#tags-keywords{
+    padding:20px 0px;
+    font-size:14px;
+}
+.badget{
+    background:#f3f3f3;
+    padding:10px;
+    border-radius:5px;
+}
 /* ----------- footer ---------------- */
 footer{
     background:#464A4D;
