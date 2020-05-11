@@ -135,18 +135,19 @@ buscarApi(api_url)
 function mostrarLocation(data) {
     var locationEnd = JSON.parse(sessionStorage.getItem('locationEnd'));
     if (locationEnd !== '') {
-        document.getElementById("locationTop").innerHTML = locationEnd;
-        let dias_calculo = 1;
-        var location_complete = '';
         data = data.filter((locationx) => {
             return locationx.keyword === locationEnd;
         });
-        data.forEach((response) => {
-            location_complete += '{ name: "' + response.location + '", iconEtapa: "1" },';
+
+        let locations_comp = data.map(function (elem) {
+            return {
+                name: elem.location,
+                iconEtapa: "1",
+            }
         });
     }
-    return console.log(location_complete);
 }
+
 
 //Melhor forma seria usando JQuery / Ajax porém o objetivo era usar JS vanilla entao utilizei dessa forma
 

@@ -56,9 +56,11 @@ function createMarker(add, lat, lng) {
     // });
     bounds.extend(marker.position);
 }
+
 buscarApi(api_url)
     .then(mostrarLocation);
 
+console.log(locations_teste);
 
 var locations = [
     {
@@ -80,7 +82,6 @@ var locations = [
 var nextAddress = 0;
 function theNext() {
     if (nextAddress < locations.length) {
-        console.log(locations[nextAddress]);
         setTimeout('geocodeAddress("' + nextAddress + '",theNext)', delay);
         nextAddress++;
     } else {
