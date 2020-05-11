@@ -40,13 +40,15 @@ function mostrarDados(data) {
         } else {
             var calcularDatas = false;
         }
-
+        // 
+        // console.log(data[i].keyword);
+        // 
         for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
             const root = document.getElementById("apiBox");
 
             let div = document.createElement("div");
-            div.setAttribute("class", "col-4");
-            // div.addEventListener("click", pageDados);
+            div.setAttribute("class", "col-4 cursor-div");
+            div.addEventListener("click", pageDados);
 
             let boxImg = document.createElement("div");
             boxImg.setAttribute("class", "boxImg");
@@ -89,8 +91,6 @@ function mostrarDados(data) {
                 priceBox.innerHTML = `<b>Total de R$ ${price_totalNum},00</b>`;
                 boxTitle.appendChild(priceBox);
             }
-
-
         }
         if (numPages(total_result) <= page) {
             let button = document.getElementById('showMore');
@@ -118,7 +118,9 @@ buscarApi(api_url)
     .then(mostrarDados);
 
 //Melhor forma seria usando JQuery / Ajax porém o objetivo era usar JS vanilla entao utilizei dessa forma
-
+function pageDados(varx) {
+    alert('Fazer pagina para receber os itens');
+}
 function handleForm(event) {
     event.preventDefault();
 
