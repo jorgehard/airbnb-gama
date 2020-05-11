@@ -20,9 +20,12 @@ function mostrarDados(data) {
     document.getElementById("idLocalizacao").value = location;
     var idCheckin = JSON.parse(sessionStorage.getItem('idCheckin'));
     document.getElementById("idCheckin").value = idCheckin;
+    document.getElementById("idCheckin").value = idCheckin;
     var idCheckout = JSON.parse(sessionStorage.getItem('idCheckout'));
     document.getElementById("idCheckout").value = idCheckout;
 
+
+    document.getElementById("dateBox").classList.add("invisible");
     //Calculando data de hospedagem
     if (location !== '') {
         document.getElementById("locationTop").innerHTML = location;
@@ -36,6 +39,10 @@ function mostrarDados(data) {
         document.getElementById("totalJs").innerHTML = total_result;
 
         if (idCheckin !== '' && idCheckout !== '') {
+            document.getElementById("dateBox").classList.remove("invisible");
+            document.getElementById("checkinDate").innerHTML = formatData(idCheckin);
+            document.getElementById("checkoutDate").innerHTML = formatData(idCheckout);
+
             const now = new Date(idCheckout);
             const past = new Date(idCheckin);
             const diff = Math.abs(now.getTime() - past.getTime());
@@ -92,6 +99,8 @@ function mostrarDados(data) {
                     priceBox.setAttribute("class", "priceTotal");
                     priceBox.innerHTML = `Total de <b>R$ ${price_totalNum},00</b>`;
                     boxTitle.appendChild(priceBox);
+
+
                 }
             } catch (e) {
                 continue;
@@ -101,7 +110,6 @@ function mostrarDados(data) {
             let button = document.getElementById('showMore');
             button.setAttribute("style", "display:none")
         }
-        console.log('teste');
     } else {
 
         location = 'Nada encontrado';
@@ -145,17 +153,15 @@ var form = document.getElementById("myForm");
 form.addEventListener('submit', handleForm);
 
 
-function formatDate(varDate) {
-    var dateTime = new Date(varDate);
-    return (
-        (dateTime.getDate() > 9) ?
-            (dateTime.getDate()) :
-            ('0' + dateTime.getDate())
-    ) + '/' +
-        (
-            (dateTime.getMonth() > 8) ?
-                (dateTime.getMonth() + 1) :
-                ('0' + (dateTime.getMonth() + 1))
-        ) + '/' +
-        dateTime.getFullYear();
+function formatData(dateStr) {
+    var arr = dateStr.split("-");
+    return arr[2] + '/' + arr[1] + '/' + arr[0];
+}
+function formatDataBr(varDate) {
+    var data = new Date(varDate),
+        dia = data.getDate() + 1,
+        dia = dia.toString().padStart(2, '0'),
+        mes = (data.getMonth() + 1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
+        ano = data.getFullYear();
+    return dia + "/" + mes + "/" + ano;
 }

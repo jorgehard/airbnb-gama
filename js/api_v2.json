@@ -1,24 +1,24 @@
 [
     {
         "photo": "https://a0.muscache.com/im/pictures/306e2e46-e3ad-4006-9ac2-591dec24d9c3.jpg?aki_policy=x_large",
-        "keyword": "São Sebastião",
-        "location": "R. Maritacas, 701-669 - Praia de Maresias, São Sebastião - SP, 11600-000",
+        "keyword": "Santos",
+        "location": "R. Campos Melo, 157 - Vila Matias, Santos - SP",
         "property_type": "Chalé",
         "name": "Chalés Maritacas I: Conforto em meio à natureza!",
         "price": 100
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/18439f40-15b6-4dbf-be0f-f69dea44e878.jpg?aki_policy=x_large",
-        "keyword": "São Paulo",
-        "location": "Vila Guarani (Zona Sul), São Paulo - SP, Brasil",
+        "keyword": "Santos",
+        "location": "Av. Washington Luiz, 21 - Vila Matias, Santos - SP",
         "property_type": "Apartamento",
         "name": "São Paulo Expo - KitNet LUXO 4",
         "price": 52
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/d12084cc-06c9-4a19-bb1c-2b5bf5931da2.jpg?aki_policy=x_large",
-        "keyword": "Itanhaém",
-        "location": "Praia do Sonho, Itanhaém - SP",
+        "keyword": "Santos",
+        "location": "R. Dr. Olyntho Rodrigues Dantas, 42-80 - Encruzilhada, Santos - SP",
         "property_type": "Casa Inteira",
         "name": "Casa na Praia dos Sonhos Segura e Confortável",
         "price": 200
@@ -26,7 +26,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/74872783-2e78-4e52-bb72-fd81f58a7501.jpg?aki_policy=x_large",
         "keyword": "Santos",
-        "location": "Pompéia, Santos - SP",
+        "location": "R. Joaquim Távora, 264-328 - Marapé",
         "property_type": "Apartamento",
         "name": "Apto na quadra da praia.ÓTIMA Loc bairro Pompéia.",
         "price": 47
@@ -34,7 +34,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/2d2c99fe-3460-479d-a198-65700b6c58b7.jpg?aki_policy=x_large",
         "keyword": "Santos",
-        "location": "Gonzaga, Santos - SP",
+        "location": "Av. Cel. Joaquim Montenegro, 300-324 - Ponta da Praia, Santos - SP",
         "property_type": "Apartamento inteiro",
         "name": "Apartamento Flat com serviço",
         "price": 129
@@ -42,7 +42,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/2b7a356b-eca9-4827-80f1-704c05e04ac0.jpg?aki_policy=x_large",
         "keyword": "Santos",
-        "location": "Ponta da Praia, Santos - SP",
+        "location": "R. Ten. Antônio João, 50-56 - Estuário, Santos - SP",
         "property_type": "Loft Inteiro",
         "name": "Apto aconchegante para suas férias, Praia/Santos",
         "price": 100
@@ -50,7 +50,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/62b8cdb3-0241-47f7-84e9-b27315121495.jpg?aki_policy=x_large",
         "keyword": "São Paulo",
-        "location": "Itararé, Santos - São Paulo, Brasil",
+        "location": "Av. Gen. Francisco Glicério, 642 - Gonzaga, Santos - SP",
         "property_type": "Loft inteiro",
         "name": "Loft da Bel - frente ao mar",
         "price": 75
@@ -58,7 +58,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/e6c4b347-49c7-4840-8c00-df36a2a273da.jpg?aki_policy=x_large",
         "keyword": "Santos",
-        "location": "",
+        "location": "R. Dr. Carvalho de Mendonça, 674-696 - Marapé, Santos - SP",
         "property_type": "Apartamento",
         "name": "Apartment in Son Parc, wonderful views",
         "price": 433
@@ -66,31 +66,31 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/4a5326cb-95e4-4220-a4d8-c91f50cf784c.jpg?aki_policy=x_large",
         "keyword": "Santos",
-        "location": "",
+        "location": "Av. Ana Costa, 541 - Gonzaga, Santos - SP",
         "property_type": "Apartamento",
         "name": "APARTAMENTO IDEAL PAREJAS EN SON PARC",
         "price": 368
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/77a102a4-cf65-475e-be60-4d592307ab4a.jpg?aki_policy=x_large",
-        "keyword": "Itanhaém",
-        "location": "",
+        "keyword": "Itanhaem",
+        "location": "R. Emídio de Souza, 1073-945 - Laranjeiras, Itanhaém - SP",
         "property_type": "Casa",
         "name": "Casa Charmosa Bem Localizada",
         "price": 70
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/83de85c5-ce24-4cc4-ae85-dfb2300b4a06.jpg?aki_policy=x_large",
-        "keyword": "Itanhaém",
-        "location": "",
+        "keyword": "Itanhaem",
+        "location": "Av. Rui Barbosa, 353-233 - Centro, Itanhaém - SP",
         "property_type": "Casa",
         "name": "Quartos pertinho do Anhembi!",
         "price": 189
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/d5dbb5b2-12a3-4de5-87d0-5a66841eb731.jpg?aki_policy=x_large",
-        "keyword": "São Paulo",
-        "location": "",
+        "keyword": "Itanhaem",
+        "location": "R. Godofredo da Silva Teles, 2-180 - Jardim Suarão - Praia, Itanhaém - SP",
         "property_type": "Chácara",
         "name": "Charming Chalet, private pool, free AC & WiFi",
         "price": 737
@@ -98,7 +98,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/ce7dd48a-8125-4cea-a1b7-27ce0068d5d8.jpg?aki_policy=x_large",
         "keyword": "São Paulo",
-        "location": "",
+        "location": "R. do Lavapés, 473-249 - Cambuci, São Paulo - SP",
         "property_type": "Chácara",
         "name": "Menorca Green Park C7",
         "price": 520
@@ -106,23 +106,23 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/bea86611-2f82-487a-a62e-17ab268515de.jpg?aki_policy=x_large",
         "keyword": "São Paulo",
-        "location": "",
+        "location": "R. Aguiar de Barros, 103-1 - Bela Vista, São Paulo - SP",
         "property_type": "Chácara",
         "name": "Villa Monty",
         "price": 1291
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/4cfeba0b-a0c3-4ae4-87c9-5e9349608814.jpg?aki_policy=x_large",
-        "keyword": "São Sebastião",
-        "location": "",
+        "keyword": "São Paulo",
+        "location": "R. Pimenta Bueno, 104-148 - Chácara Tatuapé, São Paulo - SP",
         "property_type": "Estúdio",
         "name": "Bonito penthouse cerca del aeropuerto CDMX",
         "price": 73
     },
     {
         "photo": "https://a0.muscache.com/im/pictures/ac081c48-0161-4cde-a0e6-77b3bd933f94.jpg?aki_policy=x_large",
-        "keyword": "São Sebastião",
-        "location": "",
+        "keyword": "São Paulo",
+        "location": "R. Gomes de Carvalho, 1005 - Vila Olímpia, São Paulo - SP",
         "property_type": "Estúdio",
         "name": "The Backpacker's Retreat - Balcony",
         "price": 51
@@ -130,7 +130,7 @@
     {
         "photo": "https://a0.muscache.com/im/pictures/dc72255f-7965-4964-b89e-7bfb9f4aa939.jpg?aki_policy=x_large",
         "keyword": "São Paulo",
-        "location": "",
+        "location": "Av. Brg. Faria Lima, 3144 - Itaim Bibi, São Paulo - SP",
         "property_type": "Estúdio",
         "name": "10min airport, Foro Sol, Palacio de los Deportes",
         "price": 81
