@@ -26,10 +26,14 @@ function mostrarDados(data) {
     //Calculando data de hospedagem
     if (location !== '') {
         document.getElementById("locationTop").innerHTML = location;
-        const total_result = Object.keys(data).length;
         let dias_calculo = 1;
-        document.getElementById("totalJs").innerHTML = total_result;
 
+        data = data.filter((locationx) => {
+            return locationx.keyword === location;
+        });
+
+        const total_result = Object.keys(data).length;
+        document.getElementById("totalJs").innerHTML = total_result;
 
         if (idCheckin !== '' && idCheckout !== '') {
             const now = new Date(idCheckout);
@@ -40,65 +44,67 @@ function mostrarDados(data) {
         } else {
             var calcularDatas = false;
         }
-        // 
-        // console.log(data[i].keyword);
-        // 
         for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
-            const root = document.getElementById("apiBox");
+            try {
+                const root = document.getElementById("apiBox");
 
-            let div = document.createElement("div");
-            div.setAttribute("class", "col-4 cursor-div");
-            div.addEventListener("click", pageDados);
+                let div = document.createElement("div");
+                div.setAttribute("class", "col-4 cursor-div");
+                div.addEventListener("click", pageDados);
 
-            let boxImg = document.createElement("div");
-            boxImg.setAttribute("class", "boxImg");
+                let boxImg = document.createElement("div");
+                boxImg.setAttribute("class", "boxImg");
 
-            let image = document.createElement("img");
-            image.setAttribute("class", "imgBuscar");
-            image.setAttribute("src", data[i].photo);
+                let image = document.createElement("img");
+                image.setAttribute("class", "imgBuscar");
+                image.setAttribute("src", data[i].photo);
 
-            let boxTitle = document.createElement("div");
-            boxTitle.setAttribute("class", "boxTitle");
+                let boxTitle = document.createElement("div");
+                boxTitle.setAttribute("class", "boxTitle");
 
-            let propertyType = document.createElement("p");
-            propertyType.setAttribute("class", "propertyType");
-            propertyType.innerHTML = data[i].property_type;
+                let propertyType = document.createElement("p");
+                propertyType.setAttribute("class", "propertyType");
+                propertyType.innerHTML = data[i].property_type;
 
-            let nameType = document.createElement("p");
-            nameType.setAttribute("class", "nameType");
-            nameType.innerHTML = data[i].name;
+                let nameType = document.createElement("p");
+                nameType.setAttribute("class", "nameType");
+                nameType.innerHTML = data[i].name;
 
-            let priceType = document.createElement("p");
-            priceType.setAttribute("class", "price");
-            priceType.innerHTML = `<b>R$ ${data[i].price},00</b> / diária`;
+                let priceType = document.createElement("p");
+                priceType.setAttribute("class", "price");
+                priceType.innerHTML = `<b>R$ ${data[i].price},00</b> / diária`;
 
 
 
-            root.appendChild(div);
-            div.appendChild(boxImg);
-            boxImg.appendChild(image);
-            boxImg.appendChild(boxTitle);
-            boxTitle.appendChild(propertyType);
-            boxTitle.appendChild(nameType);
-            boxTitle.appendChild(priceType);
+                root.appendChild(div);
+                div.appendChild(boxImg);
+                boxImg.appendChild(image);
+                boxImg.appendChild(boxTitle);
+                boxTitle.appendChild(propertyType);
+                boxTitle.appendChild(nameType);
+                boxTitle.appendChild(priceType);
 
-            if (calcularDatas === true) {
+                if (calcularDatas === true) {
 
-                var price_totalNum = data[i].price * dias_calculo;
+                    var price_totalNum = data[i].price * dias_calculo;
 
-                var priceBox = document.createElement("p");
-                priceBox.setAttribute("class", "priceTotal");
-                priceBox.innerHTML = `<b>Total de R$ ${price_totalNum},00</b>`;
-                boxTitle.appendChild(priceBox);
+                    var priceBox = document.createElement("p");
+                    priceBox.setAttribute("class", "priceTotal");
+                    priceBox.innerHTML = `Total de <b>R$ ${price_totalNum},00</b>`;
+                    boxTitle.appendChild(priceBox);
+                }
+            } catch (e) {
+                continue;
             }
         }
-        if (numPages(total_result) <= page) {
+        if (numPages(total_result) <= page || total_result < records_per_page) {
             let button = document.getElementById('showMore');
             button.setAttribute("style", "display:none")
         }
+        console.log('teste');
     } else {
 
-        location = '<span class="location">Nada encontrado</span>';
+        location = 'Nada encontrado';
         document.getElementById("locationTop").innerHTML = location;
     }
 }
